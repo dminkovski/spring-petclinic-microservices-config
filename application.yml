@@ -57,14 +57,13 @@ management:
       prometheus:
         enabled: true
 
-# Chaos Engineering
----
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
+      
+# Chaos Engineering
+---
   instance:
     preferIpAddress: true
 spring:
