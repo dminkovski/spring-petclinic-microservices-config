@@ -2,12 +2,14 @@
 
 server:
   # start services on random port by default
-  # port: 0
+  port: 0
   # The stop processing uses a timeout which provides a grace period during which existing requests will be allowed to complete but no new requests will be permitted
   shutdown: graceful
 
 # embedded database init, supports mysql too trough the 'mysql' spring profile
 spring:
+  sql.init.mode: always
+  sql.init.platform: mysql
   datasource:
     schema: classpath*:db/mysql/schema.sql
     data: classpath*:db/mysql/data.sql
@@ -41,6 +43,11 @@ spring.cloud.refresh.refreshable: false
 # Logging
 logging.level.org.springframework: INFO
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+
 # Metrics
 management:
   endpoint:
@@ -57,15 +64,8 @@ management:
       prometheus:
         enabled: true
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-server:8761/eureka/
-      
 # Chaos Engineering
 ---
-  instance:
-    preferIpAddress: true
 spring:
   config:
     activate:
