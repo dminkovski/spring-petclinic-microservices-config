@@ -8,9 +8,15 @@ server:
 
 # embedded database init, supports mysql too trough the 'mysql' spring profile
 spring:
+  sql.init.mode: always
+  sql.init.platform: mysql
   datasource:
-    schema: classpath*:db/hsqldb/schema.sql
-    data: classpath*:db/hsqldb/data.sql
+    schema: classpath*:db/mysql/schema.sql
+    data: classpath*:db/mysql/data.sql
+    url: jdbc:mysql://mysql-petclinic-94531f.mysql.database.azure.com:3306/petclinic?useSSL=true
+    username: myadmin
+    password: myadminpassword
+    initialization-mode: ALWAYS
   sleuth:
     sampler:
       probability: 1.0
