@@ -23,7 +23,5 @@ server:
   port: 8083
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/

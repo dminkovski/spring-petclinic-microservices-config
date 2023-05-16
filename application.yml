@@ -59,10 +59,9 @@ management:
 
 # Chaos Engineering
 ---
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
+eureka:client:
+  registerWithEureka: true
+  fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
   instance:
