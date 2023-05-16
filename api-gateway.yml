@@ -1,6 +1,7 @@
+# UPDATED 16.05.23 - 17:46
 zuul:
   prefix: /api
-  ignoredServices: '*'
+  ignoredServices: "*"
   routes:
     vets-service: /vet/**
     visits-service: /visit/**
@@ -17,6 +18,11 @@ server:
 # Internationalization
 spring.messages.basename: messages/messages
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+
 ---
 spring:
   config:
@@ -24,7 +30,3 @@ spring:
       on-profile: docker
   zipkin:
     baseUrl: http://tracing-server:9411
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-server:8761/eureka/
