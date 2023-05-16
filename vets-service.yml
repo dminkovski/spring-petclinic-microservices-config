@@ -1,12 +1,8 @@
-﻿vets:
+﻿# Updated 16.05.23 - 17:41
+vets:
   cache:
     ttl: 60
     heap-size: 100
----
-spring:
-  config:
-    activate:
-      on-profile: default
 eureka:
   client:
     serviceUrl:
@@ -14,7 +10,11 @@ eureka:
   instance:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
-
+---
+spring:
+  config:
+    activate:
+      on-profile: default
 ---
 spring:
   config:
