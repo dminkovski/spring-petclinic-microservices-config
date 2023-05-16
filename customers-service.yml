@@ -1,6 +1,10 @@
-﻿spring:
+﻿# master branch
+spring:
   profiles: default
 eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
   instance:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
@@ -14,7 +18,3 @@ spring:
     baseUrl: http://tracing-server:9411
 server:
   port: 8081
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-server:8761/eureka/
