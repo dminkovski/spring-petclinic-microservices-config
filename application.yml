@@ -2,19 +2,15 @@
 
 server:
   # start services on random port by default
-  # port: 0
+  port: 0
   # The stop processing uses a timeout which provides a grace period during which existing requests will be allowed to complete but no new requests will be permitted
   shutdown: graceful
 
 # embedded database init, supports mysql too trough the 'mysql' spring profile
 spring:
   datasource:
-    schema: classpath*:db/mysql/schema.sql
-    data: classpath*:db/mysql/data.sql
-    url: jdbc:mysql://mysql-petclinic-94531f.mysql.database.azure.com:3306/petclinic?useSSL=true
-    username: myadmin
-    password: myadminpassword
-    initialization-mode: ALWAYS
+    schema: classpath*:db/hsqldb/schema.sql
+    data: classpath*:db/hsqldb/data.sql
   sleuth:
     sampler:
       probability: 1.0
@@ -59,14 +55,6 @@ management:
 
 # Chaos Engineering
 ---
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://discovery-server:8761/eureka/
-  instance:
-    preferIpAddress: true
 spring:
   config:
     activate:
