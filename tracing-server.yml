@@ -1,6 +1,5 @@
 server:
   port: 9411
-
 ---
 spring:
   profiles: default
@@ -16,5 +15,7 @@ spring:
       on-profile: docker
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/

@@ -1,6 +1,6 @@
 zuul:
   prefix: /api
-  ignoredServices: '*'
+  ignoredServices: "*"
   routes:
     vets-service: /vet/**
     visits-service: /visit/**
@@ -26,5 +26,7 @@ spring:
     baseUrl: http://tracing-server:9411
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
