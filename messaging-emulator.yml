@@ -4,4 +4,6 @@ eureka:
       defaultZone: http://discovery-server:8761/eureka/
   instance:
     preferIpAddress: true
+management.security.enabled: false
 management.endpoints.web.exposure.include: "*"
+logging.level.org.springframework: DEBUG
