@@ -13,3 +13,4 @@ eureka:
       defaultZone: http://discovery-server:8761/eureka/
   instance:
     preferIpAddress: true
+management.endpoints.web.exposure.include: "*"

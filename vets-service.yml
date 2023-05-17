@@ -11,6 +11,7 @@ eureka:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
     preferIpAddress: true
+management.endpoints.web.exposure.include: "*"
 ---
 spring:
   config:
