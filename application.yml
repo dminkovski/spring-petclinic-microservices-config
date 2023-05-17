@@ -23,8 +23,8 @@ spring:
     schema: classpath*:db/mysql/schema.sql
     data: classpath*:db/mysql/data.sql
     url: jdbc:mysql://mysql-petclinic-94531f.mysql.database.azure.com:3306/petclinic?useSSL=true
-    username: myadmin
-    password: myadminpassword
+    #    username: myadmin
+    #    password: myadminpassword
     initialization-mode: ALWAYS
   sleuth:
     sampler:
