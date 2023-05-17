@@ -8,7 +8,7 @@ eureka:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
     preferIpAddress: true
-
+logging.level.org.springframework: DEBUG
 ---
 spring:
   config:
